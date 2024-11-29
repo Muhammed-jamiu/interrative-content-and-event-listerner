@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice Exercise 11.5</title>
+    <style>
+      body {
+        background-color: darkgray;
+        text-align: center;
+      }
+      h3 {
+        text-align: center;
+        color: white;
+        text-decoration: underline;
+      }
+      .output {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--  Explanation of the Question -->
+    <!--  -->
+    <!-- Change the text in a div element on the page. This exercise will demonstrate how
+you can get the value from an input field and place it within a page element. It also
+covers tracking button clicks and details about the event target. You can use the
+following HTML document as a template, to which you can add JavaScript: -->
+    <div>
+      <h3>Practice Exercise 11.5 Section</h3>
+      <div class="sub-content">
+        <div class="output">Output</div>
+        <input type="text" id="user-input" placeholder="Your Message..." />
+        <button class="btn1">Button 1</button>
+        <button class="btn2">Button 2</button>
+      </div>
+      <div style="margin-top: 30px">
+        <button class="btn3" style="width: 100px">Log</button>
+      </div>
+    </div>
+
+    <script>
+      const userInput = document.querySelector("#user-input");
+
+      const outPut = document.querySelector(".output");
+      const btn1 = document.querySelector(".btn1");
+      const btn2 = document.querySelector(".btn2");
+      const btn3 = document.querySelector(".btn3");
+      btn3.addEventListener("click", () => {
+        console.log(userInput.value);
+        userInput.value = "";
+      });
+      const log = [];
+      function tracker(e) {
+        outPut.textContent = userInput.value;
+        const ev = e.target;
+        console.dir(ev);
+        const temp = {
+          message: userInput.value,
+          type: ev.type,
+          class: ev.className,
+          tag: ev.tagName,
+          textContent: ev.textContent,
+          innerHTML: ev.innerHTML,
+        };
+        log.push(temp);
+        userInput.value = "";
+      }
+      btn1.addEventListener("click", tracker);
+      btn2.addEventListener("click", tracker);
+      btn3.addEventListener("click", (e) => {
+        // console.log(e);
+        console.log(log);
+      });
+    </script>
+    <!-- btn1.addEventListener("click", tracker);
+    btn2.addEventListener("click", tracker);
+    btn3.addEventListener("click", (e) => {
+    console.log(log);
+    });
+    function tracker(e) {
+    output.textContent = myInput.value;
+    const ev = e.target;
+    console.dir(ev);
+    const temp = {
+    message: myInput.value,
+    type: ev.type,
+    class: ev.className,
+    tag: ev.tagName
+    };
+    log.push(temp);
+    myInput.value = ""; -->
+  </body>
+</html>
