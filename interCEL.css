@@ -1,0 +1,16 @@
+div {
+  cursor: pointer;
+}
+section {
+  display: flex;
+  flex-direction: column;
+}
+article {
+  display: flex;
+  justify-content: space-around;
+}
+header {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}

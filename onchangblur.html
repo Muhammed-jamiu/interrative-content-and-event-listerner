@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Onchange and Onblur</h2>
+    <div id="welcome">Hello! There</div>
+    <form>
+      <input
+        type="text"
+        name="firstname"
+        id=""
+        placeholder="First name"
+        onchange="logEvent()"
+      />
+      <input
+        type="text"
+        name="lastname"
+        id=""
+        placeholder="Last name"
+        onblur="logEvent()"
+      />
+      <input type="button" name="" id="" value="Submit" onclick="sendInfo()" />
+    </form>
+
+    <br /><br />
+    <input
+      type="text"
+      name=""
+      id="name"
+      placeholder="Enter New Text"
+      oninput="isFocus()"
+    />
+    <script type="text/javascript" src="./onchangeblur.js"></script>
+  </body>
+</html>

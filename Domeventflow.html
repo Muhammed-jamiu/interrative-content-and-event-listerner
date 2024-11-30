@@ -4,9 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM Event Flow</title>
+    <link rel="stylesheet" href="./Domeventflow.css" />
   </head>
   <body>
     <h2>DOM Event Flow</h2>
-    <script></script>
+    <div id="message">Bubbling events</div>
+    <div id="output">
+      1
+      <div>
+        2
+        <div>
+          3
+          <div>
+            4
+            <div>
+              5
+              <div>6</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="./Domeventflow.js"></script>
   </body>
 </html>

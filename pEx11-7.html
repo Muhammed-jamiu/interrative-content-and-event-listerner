@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 style="text-align: center">Parctise Exercise 11.7</h2>
+    <div class="output1"></div>
+    <div>
+      <input type="text" name="firstname" placeholder="First Name" />
+      <br /><br />
+      <input type="text" name="lastname" placeholder="Last Name" />
+    </div>
+    <script>
+      const output1 = document.querySelector(".output1");
+      const firstInput = document.querySelector("input[name=firstname]");
+      const lastInput = document.querySelector("input[name=lastname]");
+      function doSomething() {
+        console.log(firstInput.value);
+      }
+      doSomething();
+      firstInput.addEventListener("mousedown", (e) => {
+        console.log(e.type);
+        update(firstInput.value);
+      });
+
+      firstInput.addEventListener("focus", (e) => {
+        console.log(e.type);
+      });
+
+      firstInput.addEventListener("blur", (e) => {
+        console.log(e.type);
+      });
+      //////
+      lastInput.addEventListener("mousedown", (e) => {
+        console.log(e.type);
+        update(lastInput.value);
+      });
+      lastInput.addEventListener("focus", (e) => {
+        console.log(e.type);
+        // update(lastInput.value);
+      });
+      lastInput.addEventListener("blur", (e) => {
+        console.log(e.type);
+        // update(lastInput.value);
+      });
+      function update(value) {
+        output1.textContent = value;
+      }
+    </script>
+  </body>
+</html>

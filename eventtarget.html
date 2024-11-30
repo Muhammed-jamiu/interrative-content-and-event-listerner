@@ -4,78 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EVENT TARGET</title>
-    <style>
-      body {
-        /* width: 600px; */
-        background-color: #ee88ee;
-      }
-      section h2 {
-        text-align: center;
-      }
-      section {
-        /* display: flex; */
-        justify-content: center;
-        align-items: center;
-        width: 320px;
-        margin: 50px auto;
-      }
-      .output {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        font-size: 30px;
-        font-weight: bold;
-      }
-      input {
-        margin-top: 20px;
-        border-radius: 10px;
-        border: 2px solid white;
-        outline: none;
-      }
-      article {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 320px;
-        margin: 50px auto;
-      }
-      input {
-        width: 300px;
-        padding: 10px;
-        outline: none;
-      }
-      .btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 322px;
-        color: white;
-        background: #007700;
-        font-size: 17px;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-      }
-      .btn:hover {
-        background-color: #009900;
-      }
-      .message {
-        text-align: left;
-        font-style: italic;
-        visibility: hidden;
-      }
-      h2 {
-        color: white;
-        text-decoration: underline;
-        border: 2px solid green;
-        background-color: green;
-        border-radius: 10px;
-      }
-      article {
-        margin-top: -50px;
-      }
-    </style>
+    <link rel="stylesheet" href="./enenttarget.css" />
   </head>
   <body>
     <section>
@@ -91,67 +20,6 @@
         <input type="button" value="Submit" onclick="sendInfo()" class="btn" />
       </form>
     </article>
-    <script>
-      /// Event Target Section
-      const messageMsg = document.querySelector("#message");
-
-      function sendInfo() {
-        const p = event.target.parentElement;
-        message(`Welcome: ${p.firstname.value} : ${p.lastname.value}`);
-      }
-
-      function message(msg) {
-        var p = event.target.parentElement;
-        if (p.firstname.value === "" || p.lastname.value === "") {
-          messageMsg.textContent =
-            "Sorry! Fill the space provided before submiting...";
-          messageMsg.style.color = "red";
-          messageMsg.style.visibility = "visible";
-          p.firstname.value = "";
-          p.lastname.value = "";
-        } else {
-          messageMsg.innerHTML = msg;
-          messageMsg.style.color = "green";
-          messageMsg.style.visibility = "visible";
-
-          p.firstname.value = "";
-          p.lastname.value = "";
-        }
-      }
-      //   Mouse event section
-      const output = document.querySelector(".output");
-      //   output.textContent = "Hello! World!";
-      //   //   console.log(output.textContent);
-      //   output.style.height = "300px";
-      //   output.style.width = "300px";
-      //   output.style.backgroundColor = "red";
-      //   output.style.borderRadius = "20px";
-
-      function colorChange(color, event) {
-        // console.log(color);
-        // console.log(event.type);
-        // console.log(event.target);
-      }
-      output.addEventListener("mousedown", (el) => {
-        colorChange("green", event);
-      });
-      output.addEventListener("mouseover", (el) => {
-        colorChange("blue", event);
-      });
-      output.addEventListener("mouseout", (el) => {
-        colorChange("gray", event);
-      });
-      output.addEventListener("mouseup", (el) => {
-        colorChange("purple", event);
-      });
-      //   document.addEventListener("DOMContentLoaded", event);
-      //   window.ondblclick = function () {
-      //     message("READY", event);
-      //   };
-      //   function message(string, event) {
-      //     console.log(string);
-      //     console.log(event.type);
-      //   }
-    </script>
+    <script type="text/javascript" src="./eventtarget.js"></script>
   </body>
 </html>
